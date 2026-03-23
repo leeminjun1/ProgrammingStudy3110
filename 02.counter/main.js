@@ -12,7 +12,14 @@ let count = 0;
 //     numText.innerHTML = count;
 // }
 
-function plus() {
-    count++;
+// function btnPlus(number = 1) {
+//     count += number;
+//     numText.innerHTML = count;
+// }
+
+const btnPlus = (number = 1) => {
+    count += number;
     numText.innerHTML = count;
 }
+
+numText.innerHTML = count;
