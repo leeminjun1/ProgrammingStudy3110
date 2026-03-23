@@ -1,14 +1,18 @@
 const btnIncrement = document.getElementById("increment");
-const btnDecrease = document.getElementById("decrease");
 const numText = document.getElementById("number");
 let count = 0;
 
-btnIncrement.addEventListener('click', () => {
+// btnIncrement.addEventListener('click', () => {
+//     count++;
+//     numText.innerHTML = count;
+// })
+
+// btnIncrement.onclick = () => {
+//     count++;
+//     numText.innerHTML = count;
+// }
+
+function plus() {
     count++;
     numText.innerHTML = count;
-})
-
-btnDecrease.addEventListener('click', () => {
-    count--;
-    numText.innerHTML = count;
-})
+}
