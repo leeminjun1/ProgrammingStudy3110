@@ -13,6 +13,16 @@ function App() {
         <button onClick={() => setCount((count) => count + 2)}>+2</button>
         <button onClick={() => setCount((count) => count - 1)}>-1</button>
         <button onClick={() => setCount(0)}>reset</button>
+        <button onClick={() => setCount((count) => count + 1 >= 10 ?  10 : count + 1)}>+(최대 10까지)</button>
+        <button onClick={() => setCount((count) => count + 1 >= 10 ?  10 : count + 1)}>+(최대 10까지)</button>
+        <button onClick={() => setCount((count) => Math.min(k10, count + 1))}>+(최대 10까지)</button>
+        <button onClick={() => setCount((count) => {
+          if (count + 1 >= 10) return 10;
+          return count + 1;
+        })}>+(최대 10까지)</button>
+        <button onClick={() => setCount((count) => count + 1 >= 10 ?  10 : count + 1)}>+(최대 10까지)</button>
+        <button onClick={() => plusMax10()}>+(최대10까지)</button>
+        <button onClick={plusMax10}>+(최대10까지)</button>
       {/* <section>
         <button
           className="counter"
