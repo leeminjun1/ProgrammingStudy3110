@@ -2,7 +2,7 @@ import Button from "./Button"
 import TodoItemEmpty from "./TodoItemEmpty"
 import TodoItem from "./TodoItem"
 
-export default function TodoList({ todos }) {
+export default function TodoList({ todos, toggleTodo }) {
 
     return (
         // <li>
@@ -14,9 +14,9 @@ export default function TodoList({ todos }) {
         <ul className="todo__list">
             {todos.length === 0 && <TodoItemEmpty/>}
             {todos.length > 0 && todos.map((todo) => 
-                <TodoItem todo={todo} />
+                <TodoItem key={todo.id} todo={todo} toggleTodo={toggleTodo}/>
             )}
-            <TodoItem key={todo.id} todo={todo}/>
+            
         </ul>
     )
 }
