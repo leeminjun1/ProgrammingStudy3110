@@ -31,6 +31,13 @@ export default function TodoListApp() {
         )
         
     }
+
+    const deleteTodo = (id) => {
+        // id가 같지 않은 todo만 복사하자 filter()
+        setTodos(
+            (todos) => todos.filter((todo) => todo.id !== id)
+        )
+    }
  
     //const addTodo = (text) => setTodos((todos) => [...todos, new Todo(text)])
     
@@ -39,7 +46,7 @@ export default function TodoListApp() {
             <div className='todo'>
                 <TodoHeader />
                 <TodoAdder addTodo={addTodo} />                 
-                <TodoList todos={todos} toggleTodo={toggleTodo}/>
+                <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo}/>
             </div>
         </>
     )
