@@ -17,19 +17,20 @@ class Todo {
 }
 
 export default function TodoListApp() {
-    const [todos, setTodos] = useState([])
+    const [todos, setTodos] = useState([]) 
     const addTodo = (text) => setTodos((todos) => [
         ...todos,
         new Todo(text)
     ])
-
+ 
+    //const addTodo = (text) => setTodos((todos) => [...todos, new Todo(text)])
     
     return (
         <>
             <div className='todo'>
                 <TodoHeader />
-                <TodoAdder />                 
-                <TodoList />
+                <TodoAdder addTodo={addTodo} />                 
+                <TodoList todos={todos} />
             </div>
         </>
     )

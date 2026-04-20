@@ -4,7 +4,7 @@ export default function TodoAdder({ addTodo }) {
     const [inputTodo, setInputTodo] = useState('') //inputTodo: 사용자가 입력한 text 
     const handleSubmit = (event) => {
         event.preventDefault()
-        if (!inputTodo) return 
+        if (!inputTodo) return  
         addTodo(inputTodo)
         setInputTodo('') //input 빈칸 만들자
     }
