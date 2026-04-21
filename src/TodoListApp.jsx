@@ -1,5 +1,5 @@
 import './todolist.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 // import Button from './components/Button'
 // import TodoItemEmpty from './components/TodoItemEmpty'
 import TodoHeader from './components/TodoHeader'
@@ -16,8 +16,21 @@ class Todo {
     }
 }
 
+const TODOS_STORAGE_KEY = "todos"
+
 export default function TodoListApp() {
-    const [todos, setTodos] = useState([]) 
+
+    const initTodos = () => {
+        const savedTodos = localStorage.getItem(TODOS_STORAGE_KEY)
+        return savedTodos ? JSON.parse(savedTodos) : []
+    }
+
+    const [todos, setTodos] = useState(initTodos) 
+
+    useEffect(() => {
+        localStorage.setItem(TODOS_STORAGE_KEY, JSON.stringify(todos))
+    }, [todos])
+
     const addTodo = (text) => setTodos((todos) => [
         ...todos,
         new Todo(text)

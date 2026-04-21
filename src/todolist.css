@@ -56,7 +56,7 @@
 }
 
 .todo__input--edit {
-    flex-grow: 1;
+    flex-grow: 1; 
 }
 
 .todo__button--edit,
